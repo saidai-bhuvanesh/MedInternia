@@ -66,6 +66,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setGlobalToken(null);
     setUserId(null);
     setUser(null);
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("user");
+    localStorage.removeItem("starredCases");
+    localStorage.removeItem("starredPapers");
+    localStorage.removeItem("pinnedPapers");
+    localStorage.removeItem("refreshToken");
   }, []);
 
   const refreshUser = useCallback(() => {
